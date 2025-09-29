@@ -4,27 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/common/common.css">
     <title>사랑이네 스윗 홈 카페</title>
     <style>
-        /* 기본 설정 */
-        body {
-        margin: 0;
-        font-family: 'Noto Sans KR', sans-serif;
-        background-color: rgb(255, 255, 255);
-        color: #333;
-        line-height: 1.6;
-        }
-
-        /* 헤더 (로고 영역) */
-        .header {
-        padding: 20px;
-        text-align: left;
-        }
-
-        .header img {
-        max-width: 200px;
-        height: auto;
-        }
 
         /* 메인 배너 */
         .mainbanner {
@@ -34,55 +16,31 @@
         margin-bottom: 20px;
         }
 
-        /* 섹션 제목 */
-        h2 {
-        margin: 30px 30px 10px;
-        font-size: 24px;
-        padding-left: 10px;
-        color: #444;
-        }
-
-        /* 메뉴 리스트 */
-        ul {
-        list-style: none;
-        padding-left: 30px;
-        margin-bottom: 30px;
-        }
-
-        ul li {
-        margin-bottom: 10px;
-        font-size: 18px;
-        position: relative;
-        padding-left: 10px;
-        }
-
-        /* 반응형 처리 */
-        @media (max-width: 600px) {
-        .header img {
-            max-width: 150px;
-        }
-
-        h2 {
-            font-size: 20px;
-            margin: 20px 30px 10px;
-        }
-
-        ul li {
-            font-size: 16px;
-        }
-        }
-
     </style>
 </head>
 <body>
+
     <div class="header">
         <img src="/logo.png" alt="사랑이네 로고">
+
+        <div class="dropdown">
+            <button class="dropdown-toggle" id="dropdownBtn">︙</button>
+            <div class="dropdown-menu" id="dropdownMenu">
+                <a href="/index.html">메뉴</a>
+                <a href="/introduce.html">메뉴 설명</a>
+                <div class="dropdown-divider"></div>
+                <a href="/road.html">찾아오는 길</a>
+            </div>
+        </div>
+
     </div>
+
+     <script src="/common/common.js"></script>
 
     <main>
         <img class="mainbanner" src="/mainbanner.gif" alt="메인 배너">
 
-        <h2>Coffee(물 베이스)</h2>
+        <h2>Coffee(Water Base)</h2>
         <ul>
             <li>- 아메리카노 HOT/ICE</li>
             <li>- 바닐라 아메리카노 HOT/ICE</li>
@@ -90,7 +48,7 @@
             <li>- 코코넛커피 (밀크커피 종류) HOT/ICE</li>
         </ul>
 
-        <h2>Coffee(우유 베이스)</h2>
+        <h2>Coffee(Milk Base)</h2>
         <ul>
             <li>- 카페라떼 HOT/ICE</li>
             <li>- 👍🏻 바닐라라떼 HOT/ICE</li>
@@ -110,5 +68,4 @@
         <!-- <p>enjoy coffee</p> -->
     </footer>
 </body>
-
 </html>
