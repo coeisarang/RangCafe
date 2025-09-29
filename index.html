@@ -8,26 +8,99 @@
     <title>사랑이네 스윗 홈 카페</title>
     <style>
 
-        /* 메인 배너 */
-        .mainbanner {
-        width: 100%;
-        height: auto;
-        display: block;
-        margin-bottom: 20px;
-        }
+    .skills-tab-container {
+      display: flex;
+      flex-direction: column; /* 세로 정렬로 변경 */
+      max-width: 800px;
+      min-height: 480px;
+    }
+
+    .tab-list {
+      display: flex;
+      flex-direction: row; /* 가로로 정렬 */
+      border-bottom: 2px solid #ccc;
+      margin-bottom: 20px;
+    }
+
+    .tab-button {
+      padding: 12px 20px;
+      background: none;
+      border: none;
+      border-bottom: 3px solid transparent;
+      cursor: pointer;
+      transition: 0.3s;
+      font-size: 16px;
+      color: #000000;
+    }
+
+    .tab-button.active {
+      border-color: #000000;
+      font-weight: bold;
+      color: #000000;
+      background-color: #e8e6e6;
+    }
+
+    .tab-content {
+      flex: 1;
+    }
+
+    .tab-panel {
+      display: none;
+      animation: fadeIn 0.3s ease;
+    }
+
+    .tab-panel.active {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .p3f{
+      font-size: 1.5rem;
+      margin: 0 auto 40px;
+      color: #333;
+      text-align: center;
+      display: block;
+      width: fit-content;
+    }
+
+   .inline-media {
+      display: flex;
+      align-items: center; /* 수직 가운데 정렬 */
+      gap: 30px; /* 이미지와 텍스트 사이 간격 */
+      margin-top: 30px;
+    }
+
+    .inline-media img {
+      width: 40%;   /* 이미지 크기 조절 */
+      object-fit: contain;
+    }
+
+    .inline-media p {
+      margin: 0;
+      line-height: 1.6;
+      color: #565656;
+    }
+    p{
+      padding-right: 17px;
+    }
 
     </style>
 </head>
 <body>
 
     <div class="header">
-        <img src="/logo.png" alt="사랑이네 로고">
+        <a href="/index.html"><img src="/logo.png" alt="사랑이네 로고"></a>
+
 
         <div class="dropdown">
             <button class="dropdown-toggle" id="dropdownBtn">︙</button>
             <div class="dropdown-menu" id="dropdownMenu">
-                <a href="/index.html">메뉴</a>
-                <a href="/introduce.html">메뉴 설명</a>
+                <a href="/menu.html">메뉴</a>
+                <a href="/index.html">메뉴 설명</a>
                 <div class="dropdown-divider"></div>
                 <a href="/road.html">찾아오는 길</a>
             </div>
@@ -38,34 +111,100 @@
      <script src="/common/common.js"></script>
 
     <main>
-        <img class="mainbanner" src="/mainbanner.gif" alt="메인 배너">
+        <div>
+          <h2 class="p3f">메뉴 설명</h2>
+          <div class="skills-tab-container">
+            <div class="tab-list">
+              <button class="tab-button active" data-tab="Language">Coffee<br>(Water Base)</button>
+              <button class="tab-button" data-tab="Frontend">Coffee<br>(Milk Base)</button>
+              <button class="tab-button" data-tab="Backend">Non-Coffee</button>
+            </div>
 
-        <h2>Coffee(Water Base)</h2>
-        <ul>
-            <li>- 아메리카노 HOT/ICE</li>
-            <li>- 바닐라 아메리카노 HOT/ICE</li>
-            <li>- 👍🏻 헤이즐넛 아메리카노 HOT/ICE</li>
-            <li>- 코코넛커피 (밀크커피 종류) HOT/ICE</li>
-        </ul>
+            <div class="tab-content">
+              <div class="tab-panel active" id="Language">
+                <div class="inline-media">
+                  <img src="/images/c1.jpg" alt="아메리카노"/>
+                  <p><b>아메리카노 (ICE/HOT)</b><br>싱가포르의 유명 커피 브랜드 BACHA 커피를 내려 만든 아메리카노</p>
+                </div>
+                <div class="inline-media">
+                  <img src="/images/c9.jpg" alt="바닐라 아메리카노" />
+                  <p><b>바닐라 아메리카노 (ICE/HOT)</b><br>기존의 아메리카노에서 바닐라 시럽 3p 더한 아메리카노</p>
+                </div>
+                <div class="inline-media">
+                  <img src="/images/c11.jpg" alt="헤이즐넛 아메리카노" />
+                  <p><b>헤이즐넛 아메리카노 (ICE/HOT)</b><br>기존의 아메리카노에서 헤이즐넛 시럽 3p 더한 아메리카노</p>
+                </div>
+                <div class="inline-media">
+                  <img src="/images/c10.jpg" alt="코코넛 커피" />
+                  <p><b>코코넛 커피(밀크커피)</b><br>베크남의 유명한 코코넛 커피 우리나라의 믹스커피와 같이 달달한 맛을 주는 커피</p>
+                </div>
+              </div>
 
-        <h2>Coffee(Milk Base)</h2>
-        <ul>
-            <li>- 카페라떼 HOT/ICE</li>
-            <li>- 👍🏻 바닐라라떼 HOT/ICE</li>
-            <li>- 헤이즐넛라떼 HOT/ICE</li>
-        </ul>
+              <div class="tab-panel" id="Frontend">
+                <div class="inline-media">
+                  <img src="/images/c3.jpg" alt="카페 라떼"/>
+                  <p><b>카페 라떼 (ICE/HOT)</b><br>고소한 우유와 카누의 에스프레소를 더한 카페 라떼</p>
+                </div>
+                <div class="inline-media">
+                  <img src="/images/c4.jpg" alt="카페 라떼"/>
+                  <p><b>바닐라 라떼 (ICE/HOT)</b><br>고소한 우유와 카누의 에스프레소에 바닐라 시럽 6p 더한 바닐라 라떼</p>
+                </div>
+                <div class="inline-media">
+                  <img src="/images/c2.jpg" alt="카페 라떼"/>
+                  <p><b>헤이즐넛 라떼 (ICE/HOT)</b><br>고소한 우유와 카누의 에스프레소에 헤이즐넛 시럽 6p 더한 헤이즐넛 라떼</p>
+                </div>
 
-        <h2>Non-Coffee</h2>
-        <ul>
-            <li>- 👍🏻 딸기라떼 ONLY ICE</li>
-            <li>- 초코라떼 HOT/ICE</li>
-            <li>- 자몽에이드 ONLY ICE</li>
-            <li>- 청포도에이드 ONLY ICE</li>
-        </ul>
+              </div>
+              <div class="tab-panel" id="Backend">
+                <div class="inline-media">
+                  <img src="/images/c8.jpg" alt="초코라떼" />
+                  <p><b>초코라떼 (ICE/HOT)</b><br>달달한 초콜릿 파우더에 고소한 우유를 더한 라떼</p>
+                </div>
+                <div class="inline-media">
+                  <img src="/images/c7.jpg" alt="녹차라떼" />
+                  <p><b>녹차라떼 (ICE/HOT)</b><br>달콤 쌉싸름한 녹차 파우더에 고소한 우유를 더한 라떼</p>
+                </div>
+                <div class="inline-media">
+                  <img src="/images/c12.jpg" alt="딸기라떼" />
+                  <p><b>딸기라떼 (ONLY ICE)</b><br>새콤달콤한 딸기청에 고소한 우유를 더한 음료</p>
+                </div>
+                <div class="inline-media">
+                  <img src="/images/c5.jpg" alt="청포도 에이드" />
+                  <p><b>청포도 에이드 (ONLY ICE)</b><br>상큼 달달한 청포도 시럽에 제로 사이다를 넣은 피지오</p>
+                </div>
+
+                <div class="inline-media">
+                  <img src="/images/c6.jpg" alt="자몽 에이드" />
+                  <p><b>자몽 에이드 (ONLY ICE)</b><br>달콤 쌉싸름하 자몽 시럽에 제로 사이다를 넣은 피지오</p>
+                </div>
+
+
+              </div>
+
+            </div>
+          </div>
+
+          <script>
+      document.querySelectorAll('.tab-button').forEach(button => {
+      button.addEventListener('click', () => {
+        const tab = button.getAttribute('data-tab');
+
+        // 버튼 active 상태 설정
+        document.querySelectorAll('.tab-button').forEach(btn => {
+          btn.classList.remove('active');
+        });
+        button.classList.add('active');
+
+        // 탭 내용 active 상태 설정
+        document.querySelectorAll('.tab-panel').forEach(panel => {
+          panel.classList.remove('active');
+        });
+        document.getElementById(tab).classList.add('active');
+      });
+    });
+
+    </script>
     </main>
 
-    <footer>
-        <!-- <p>enjoy coffee</p> -->
-    </footer>
 </body>
 </html>
