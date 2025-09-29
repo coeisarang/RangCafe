@@ -30,6 +30,7 @@
       cursor: pointer;
       transition: 0.3s;
       font-size: 16px;
+      color: #000000;
     }
 
     .tab-button.active {
@@ -83,6 +84,9 @@
       line-height: 1.6;
       color: #565656;
     }
+    p{
+      padding-right: 17px;
+    }
 
     </style>
 </head>
@@ -110,14 +114,13 @@
           <h2 class="p3f">메뉴 설명</h2>
           <div class="skills-tab-container">
             <div class="tab-list">
-              <button class="tab-button active" data-tab="Language">Coffee(Water Base)</button>
-              <button class="tab-button" data-tab="Frontend">Coffee(Milk Base)</button>
+              <button class="tab-button active" data-tab="Language">Coffee<br>(Water Base)</button>
+              <button class="tab-button" data-tab="Frontend">Coffee<br>(Milk Base)</button>
               <button class="tab-button" data-tab="Backend">Non-Coffee</button>
             </div>
 
             <div class="tab-content">
               <div class="tab-panel active" id="Language">
-                <h3>Coffee (Water Base)</h3>
                 <div class="inline-media">
                   <img src="/images/c1.jpg" alt="아메리카노"/>
                   <p><b>아메리카노 (ICE/HOT)</b><br>싱가포르의 유명 커피 브랜드 BACHA 커피를 내려 만든 아메리카노</p>
@@ -137,7 +140,6 @@
               </div>
 
               <div class="tab-panel" id="Frontend">
-                <h3>Coffee (Milk Base)</h3>
                 <div class="inline-media">
                   <img src="/images/c3.jpg" alt="카페 라떼"/>
                   <p><b>카페 라떼 (ICE/HOT)</b><br>고소한 우유와 카누의 에스프레소를 더한 카페 라떼</p>
@@ -153,7 +155,6 @@
 
               </div>
               <div class="tab-panel" id="Backend">
-                <h3>Non-Coffee</h3>
                 <div class="inline-media">
                   <img src="/images/c8.jpg" alt="초코라떼" />
                   <p><b>초코라떼 (ICE/HOT)</b><br>달달한 초콜릿 파우더에 고소한 우유를 더한 라떼</p>
